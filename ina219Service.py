@@ -1,7 +1,6 @@
 #################################################################################
-#               Proyecto:   ina219Service                                      #
+#               Proyecto:   ina219Service                                       #
 #               Autor: Oscar Loras Delgado                                      #
-#                                                                               #
 #################################################################################
 
 import time
@@ -53,7 +52,8 @@ while True:
         shuntvoltage1 = ina219.shunt_voltage
         current_mA1 = ina219.current / 1000
 
-        logger.info(str(round(busvoltage1,4)) + "|" + str(round(shuntvoltage1,4)) + "|" + str(round(current_mA1,4)))
+        #logger.info(str(round(busvoltage1,4)) + "|" + str(round(shuntvoltage1,4)) + "|" + str(round(current_mA1,4)))
+        logger.info(str(round(busvoltage1,4)))
         time.sleep(tiempoMuestreoINA219)
     except Exception as e:
         loggerLog.error("[Ina219Service] Exception: " + str(e))
